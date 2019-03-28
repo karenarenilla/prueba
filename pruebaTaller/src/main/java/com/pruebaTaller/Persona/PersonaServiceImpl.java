@@ -1,11 +1,11 @@
-package com.demo.Persona;
+package com.pruebaTaller.Persona;
 
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class PersonaServiceImpl implements PersonaService {
+public class PersonaServiceImpl implements PersonaService{
 
     private PersonaRepository personaRepository;
 
@@ -34,7 +34,7 @@ public class PersonaServiceImpl implements PersonaService {
     }
 
     @Override
-    public void update(String id, Persona persona) {
+    public String update(String id, Persona persona) {
         Persona tmp = this.personaRepository.findById(id).get();
         if (tmp != null) {
             tmp.setNombre(persona.getNombre());
@@ -44,11 +44,12 @@ public class PersonaServiceImpl implements PersonaService {
             tmp.setCorreo(persona.getCorreo());
             this.personaRepository.save(tmp);
         }
+        return "Update";
     }
 
     @Override
-    public void delete(String id) {
+    public String delete(String id) {
         this.personaRepository.deleteById(id);
+        return "Delete";
     }
-
 }

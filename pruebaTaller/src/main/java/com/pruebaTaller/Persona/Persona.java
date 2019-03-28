@@ -1,23 +1,21 @@
-package com.demo.Persona;
+package com.pruebaTaller.Persona;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@EntityScan
 @Document(collection = "persona")
 public class Persona {
     @Id
-    private String _id;
-
+    private String id;
     String nombre;
     String apellidos;
     String direccion;
     String telefono;
     String correo;
 
-    public String getId() { return _id; }
-    public void setId(String id) { this._id = id; }
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
