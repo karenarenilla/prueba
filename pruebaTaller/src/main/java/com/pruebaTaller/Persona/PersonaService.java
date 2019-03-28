@@ -1,4 +1,4 @@
-package com.demo.Persona;
+package com.pruebaTaller.Persona;
 
 import java.util.List;
 
@@ -6,6 +6,6 @@ public interface PersonaService {
     Persona findOne(String id);
     List<Persona> findAll();
     Persona create(Persona persona);
-    void update(String id, Persona persona);
-    void delete(String id);
+    String update(String id, Persona persona);
+    String delete(String id);
 }

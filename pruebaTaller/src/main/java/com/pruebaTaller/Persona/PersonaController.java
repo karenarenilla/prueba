@@ -1,4 +1,4 @@
-package com.demo.Persona;
+package com.pruebaTaller.Persona;
 
 import org.springframework.web.bind.annotation.*;
 
