@@ -4,27 +4,27 @@
       <div class="card">
         <div class="card-content">
           <form #tallerForm="ngForm">
-            <input type="text" name="id" #id="ngModel" [(ngModel)]="tallerService.selectedPersona.id">
+            <input type="text" name="id" #id="ngModel" [(ngModel)]="tallerService.selectedTaller.id" placeholder="Enter codigo del taller">
             <div class="row">
               <div class="input-field col-s12">
-                <input type="text" name="nombre" #name="ngModel" [(ngModel)]="personaService.selectedPersona.nombre" placeholder="Enter your FullName">
+                <input type="text" name="persona" #name="ngModel" [(ngModel)]="tallerService.selectedTaller.persona" placeholder="Enter your ID">
               </div>
               <div class="input-field col-s12">
-                <input type="text" name="apellidos" #name="ngModel" [(ngModel)]="personaService.selectedPersona.apellidos" placeholder="Enter your Apellidos">
+                <input type="date" name="fecha" #name="ngModel" [(ngModel)]="tallerService.selectedTaller.fecha" placeholder="Enter the date">
               </div>
               <div class="input-field col-s12">
-                <input type="text" name="direccion" #name="ngModel" [(ngModel)]="personaService.selectedPersona.direccion" placeholder="Enter your Address">
+                <input type="text" name="lugar" #name="ngModel" [(ngModel)]="tallerService.selectedTaller.lugar" placeholder="Enter your lugar">
               </div>
               <div class="input-field col-s12">
-                <input type="tel" name="telefono" #name="ngModel" [(ngModel)]="personaService.selectedPersona.telefono" placeholder="Enter your Phone">
-              </div>
+                  <input type="text" name="calificacion" #name="ngModel" [(ngModel)]="tallerService.selectedTaller.calificacion" placeholder="Enter your calificacion">
+                </div>
               <div class="input-field col-s12">
-                <input type="email" name="correo" #name="ngModel" [(ngModel)]="personaService.selectedPersona.correo" placeholder="Enter your Email">
+                <input type="text" name="habilidades" #name="ngModel" [(ngModel)]="tallerService.selectedTaller.habilidades" placeholder="Enter your Habilidades">
               </div>
               <div class="card-action">
                 <div class="input-field col-s12">
-                  <button class="btn right" style="margin-left: 2px;" (click)="resetForm(personaForm)">Clean</button>
-                  <button class="btn right"(click)="addPersona(personaForm)">Save</button>
+                  <button class="btn right" style="margin-left: 2px;" (click)="resetForm(tallerForm)">Clean</button>
+                  <button class="btn right"(click)="addTaller(tallerForm)">Save</button>
                 </div>
               </div>
             </div>
@@ -36,19 +36,26 @@
       <table class="striped highlight black-text">
         <thead>
           <th>Id</th>
-          <th>Nombre</th>
-          <th>Apellidos</th>
+          <th>Persona</th>
+          <th>Fecha</th>
+          <th>Calificacion</th>
+          <th>Lugar</th>
+          <th>Habilidades</th>
+          <th>Operations</th>
         </thead>
         <tbody>
-          <tr *ngFor="let persona of personaService.personas">
-            <td>{{ persona.id }}</td>
-            <td>{{ persona.nombre }}</td>
-            <td>{{ persona.apellidos }}</td>
+          <tr *ngFor="let taller of tallerService.talleres">
+            <td>{{ taller.id }}</td>
+            <td>{{ taller.persona }}</td>
+            <td>{{ taller.fecha }}</td>
+            <td>{{ taller.calificacion }}</td>
+            <td>{{ taller.lugar }}</td>
+            <td>{{ taller.habilidades }}</td>
             <td>
-              <a (click)="editPersona(persona)">
+              <a (click)="editTaller(taller)">
                 <i class="material-icons">edit</i>
               </a>
-              <a (click)="deletePersona(persona.id, personaForm)">
+              <a (click)="deleteTaller(taller.id, tallerForm)">
                 <i class="material-icons">delete</i>
               </a>
             </td>

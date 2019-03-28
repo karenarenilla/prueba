@@ -22,7 +22,7 @@ export class TallerComponent implements OnInit {
   getTallers(){
     this.tallerService.getTalleres()
     .subscribe(res => {
-      this.tallerService.personas = res as Taller[];
+      this.tallerService.talleres = res as Taller[];
     })
   }
 

@@ -8,7 +8,7 @@ import { Taller } from '../models/taller';
 export class TallerService {
 
   selectedTaller: Taller;
-  personas: Taller[];
+  talleres: Taller[];
  
    readonly URL_API = 'http://localhost:8080/api/v1/taller/';
  
