@@ -7,9 +7,6 @@
             <input type="text" name="id" #id="ngModel" [(ngModel)]="tallerService.selectedTaller.id" placeholder="Enter codigo del taller">
             <div class="row">
               <div class="input-field col-s12">
-                <input type="text" name="persona" #name="ngModel" [(ngModel)]="tallerService.selectedTaller.persona" placeholder="Enter your ID">
-              </div>
-              <div class="input-field col-s12">
                 <input type="date" name="fecha" #name="ngModel" [(ngModel)]="tallerService.selectedTaller.fecha" placeholder="Enter the date">
               </div>
               <div class="input-field col-s12">
@@ -18,9 +15,6 @@
               <div class="input-field col-s12">
                   <input type="text" name="calificacion" #name="ngModel" [(ngModel)]="tallerService.selectedTaller.calificacion" placeholder="Enter your calificacion">
                 </div>
-              <div class="input-field col-s12">
-                <input type="text" name="habilidades" #name="ngModel" [(ngModel)]="tallerService.selectedTaller.habilidades" placeholder="Enter your Habilidades">
-              </div>
               <div class="card-action">
                 <div class="input-field col-s12">
                   <button class="btn right" style="margin-left: 2px;" (click)="resetForm(tallerForm)">Clean</button>
@@ -36,21 +30,17 @@
       <table class="striped highlight black-text">
         <thead>
           <th>Id</th>
-          <th>Persona</th>
           <th>Fecha</th>
           <th>Calificacion</th>
           <th>Lugar</th>
-          <th>Habilidades</th>
           <th>Operations</th>
         </thead>
         <tbody>
           <tr *ngFor="let taller of tallerService.talleres">
             <td>{{ taller.id }}</td>
-            <td>{{ taller.persona }}</td>
             <td>{{ taller.fecha }}</td>
             <td>{{ taller.calificacion }}</td>
             <td>{{ taller.lugar }}</td>
-            <td>{{ taller.habilidades }}</td>
             <td>
               <a (click)="editTaller(taller)">
                 <i class="material-icons">edit</i>

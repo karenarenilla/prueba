@@ -1,14 +1,15 @@
 import { Habilidad } from './habilidad';
+import { Persona } from './persona';
 
 export class Taller {
   _id: String;
-  persona: String;
+  persona: Persona;
   fecha: String;
   calificacion: String;
   lugar: String;
   habilidades: Array<Habilidad>;
 
-  constructor(id = "", persona = "", fecha = "", calificacion = "", lugar = "", habilidades = [new Habilidad()]) {
+  constructor(id = "", persona = new Persona(), fecha = "", calificacion = "", lugar = "", habilidades = [new Habilidad()]) {
     this._id = id;
     this.persona = persona;
     this.fecha = fecha;
