@@ -15,6 +15,7 @@ export class TallerComponent implements OnInit {
 
   constructor(private tallerService: TallerService) { }
 
+  //Consultas de taller
   ngOnInit() {
     this.getTallers();
   }
@@ -64,5 +65,9 @@ export class TallerComponent implements OnInit {
       form.reset();
     }
   }
+//Consultas de Persona
 
+  getPersonaTaller() {
+    this.tallerService
+  }
 }
