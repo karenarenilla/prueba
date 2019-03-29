@@ -1,3 +1,49 @@
-<p>
-  habilidad works!
-</p>
+<div class="container">
+    <div class="row">
+      <div class="col s5">
+        <div class="card">
+          <div class="card-content">
+            <form #habilidadForm="ngForm">
+              <input type="text" name="id" #id="ngModel" [(ngModel)]="habilidadService.selectedHabilidad.id"placeholder="Enter your ID">
+              <div class="row">
+                <div class="input-field col-s12">
+                  <input type="text" name="nombre" #name="ngModel" [(ngModel)]="habilidadService.selectedHabilidad.nombre" placeholder="Enter your Habilidad">
+                </div>
+                <div class="card-action">
+                  <div class="input-field col-s12">
+                    <button class="btn right" style="margin-left: 2px;" (click)="resetForm(habilidadForm)">Clean</button>
+                    <button class="btn right"(click)="addHabilidad(habilidadForm)">Save</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col s7">
+        <table class="striped highlight black-text">
+          <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Operations</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let habilidad of habilidadService.habilidades">
+              <td>{{ habilidad.id }}</td>
+              <td>{{ habilidad.nombre }}</td>
+              <td>
+                <a (click)="editHabilidad(habilidad)">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a (click)="deleteHabilidad(habilidad.id, habilidadForm)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
