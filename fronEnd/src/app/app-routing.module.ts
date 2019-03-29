@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PersonaComponent } from './persona/persona.component';
-import { TallerComponent } from './taller/taller.component';
 import { HabilidadComponent } from './habilidad/habilidad.component';
+import { TallerPrevComponent } from './taller-prev/taller-prev.component';
+import { TallerComponent } from './taller/taller.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

@@ -9,6 +9,7 @@ import { TallerComponent } from './taller/taller.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HabilidadComponent } from './habilidad/habilidad.component';
+import { TallerPrevComponent } from './taller-prev/taller-prev.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HabilidadComponent } from './habilidad/habilidad.component';
     PersonaComponent,
     TallerComponent,
     HomeComponent,
-    HabilidadComponent
+    HabilidadComponent,
+    TallerPrevComponent
   ],
   imports: [
     BrowserModule,
