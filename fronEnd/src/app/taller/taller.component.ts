@@ -11,19 +11,32 @@ declare let M: any;
   providers: [ TallerService ]
 })
 export class TallerComponent implements OnInit {
-
-  constructor(private tallerService: TallerService) {
-   }
+  
+  constructor(private tallerService: TallerService) { }
 
   ngOnInit() {
     this.getTalleres();
   }
 
-  getTalleres() {
+  getTalleres(){
     this.tallerService.getTalleres()
     .subscribe(res => {
       this.tallerService.talleres = res as Taller[];
     })
   }
 
+  addHabilidad(form: NgForm) {
+    this.tallerService.postTaller(form.value)
+      .subscribe(res => {
+        this.getTalleres();
+        this.resetForm(form);
+        M.toast({html: 'Save successfully'});
+      });    
+  }
+ 
+  resetForm(form: NgForm) {
+    if(form) {
+      form.reset();
+    }
+  }
 }
